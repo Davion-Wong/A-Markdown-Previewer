@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 98vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+body {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: flex;
+}
+
+.App {
+  flex: 1;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #84BCDA; /* A light grey */
+  color: #333; /* A dark grey for text */
+}
+
+#header {
+  height: 80px;
+  padding: 15px;
+  margin: 0;
+  text-align: center;
+  background-color: #067BC2; /* A teal color for your header */
+  color: #FFF; /* White text for contrast */
+}
+
+h1 {
+  margin: 0;
+}
+
+#container {
+  height: calc(100vh - 170px);
+  display: flex;
+  justify-content: space-evenly; /* To add some space between the two columns */
+  padding: 0 25px; /* To add some space around the edges */
+}
+
+#editor, #preview {
+  height: calc(80vh - 170px);
+  width: 43%; /* Make them each take up roughly half the width of the container */
+}
+
+#editor {
+  padding: 10px; /* Add some padding */
+  margin-top: 30px; 
+  margin-right: 10px; 
+  border-radius: 8px; /* Round the borders */
+  font-size: 16px; /* Set the font size */
+  background-color: #FFF; /* A white background for the editor */
+  color: #333; /* Dark grey text */
+  border: 1px solid #CCC; /* A light grey border */
+}
+
+#preview {
+  padding: 10px;
+  margin-top: 30px; 
+  margin-left: 10px;
+  border-radius: 8px;
+  overflow: auto; /* Add a scrollbar if the content is too long */
+  font-size: 16px; /* Set the font size */
+  background-color: #FFF; /* A white background for the preview */
+  color: #333; /* Dark grey text */
+  border: 1px solid #CCC; /* A light grey border */
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  height: 30px;
+  width: 100%;
+  background-color: #067BC2;
   color: white;
+  font-size: 14px;
+  line-height: 30px; /* Center the text vertically */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  #container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  #editor, #preview {
+    width: 100%; /* Make them take up the full width */
+    margin: 10px 0; /* Add some vertical margin */
   }
 }
